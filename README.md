@@ -1,4 +1,4 @@
-# DSA Project
+# **DSA Project**
 
 This repository contains implementations of fundamental Data Structures and Algorithms created as part of an institute-assigned coursework project.  
 The objective of this project is to demonstrate understanding of core DSA concepts, coding practices, and algorithmic problem-solving.
