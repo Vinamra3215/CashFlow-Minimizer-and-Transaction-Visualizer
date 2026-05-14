@@ -1,8 +1,8 @@
 # CashFlow Minimizer and Transaction Visualizer
 
-A web-based transaction optimization and visualization system built using graph-based algorithms to minimize redundant cash transactions between multiple participants.
+A React + Vite based transaction optimization and visualization platform designed to minimize redundant cash transactions between multiple participants using graph-based algorithms.
 
-The project compares multiple cashflow minimization strategies, visualizes transaction graphs, and benchmarks algorithmic performance using isolated worker-thread execution.
+The project benchmarks multiple settlement strategies, visualizes transaction flows, and compares optimization efficiency through an interactive dashboard.
 
 ---
 
@@ -16,50 +16,52 @@ Instead of:
 
 - A → B → C
 
-the system optimizes the flow into:
+the system optimizes the settlement into:
 
 - A → C
 
 thereby reducing:
 - redundant transactions
-- settlement complexity
 - unnecessary intermediate transfers
+- settlement complexity
 
 ---
 
 # Features
 
 - Cashflow minimization
-- Interactive transaction visualization
+- Interactive transaction graph visualization
 - Multiple algorithm comparison
-- Real-time performance benchmarking
-- Graph-based settlement optimization
-- Web Worker powered execution
+- Real-time benchmarking dashboard
 - Optimized transaction flow generation
+- Modular React architecture
+- Web Worker based performance benchmarking
 
 ---
 
 # Algorithms Implemented
 
-The project compares different minimization approaches including:
+The platform compares different optimization approaches including:
 
 - Greedy Algorithm
 - Min Cash Flow Algorithm
-- Priority Queue Based Approach
 - Heap-Based Optimization
+- Priority Queue Based Settlement
 - Sorting-Based Optimization
 
 Each algorithm is benchmarked based on:
-- transaction reduction
 - execution time
-- efficiency
-- cash flow optimization
+- transaction reduction
+- optimization efficiency
+- settlement complexity
 
 ---
 
 # Tech Stack
 
 ## Frontend
+- React
+- Vite
 - HTML
 - CSS
 - JavaScript
@@ -67,20 +69,35 @@ Each algorithm is benchmarked based on:
 ## Concepts Used
 - Graph Algorithms
 - Greedy Optimization
-- Heap/Priority Queue Concepts
+- Heap / Priority Queue Concepts
 - Net Balance Computation
 - Transaction Minimization
 - Web Workers
 
 ---
 
-# Algorithm Comparison
+# Project Structure
 
-The platform benchmarks different optimization techniques and compares their efficiency.
+```bash
+src/
+├── algorithms/         # Cashflow minimization algorithms
+├── components/         # Reusable React components
+├── utils/              # Helper and utility functions
+├── visualization/      # Graphs and visualization logic
+├── workers/            # Benchmarking and worker-thread logic
+├── App.jsx
+├── main.jsx
+├── App.css
+└── index.css
+```
 
-## Comparison Dashboard
+---
+
+# Algorithm Comparison Dashboard
 
 ![Algorithm Comparison](assets/algorithm-comparison.png)
+
+The dashboard benchmarks different minimization techniques and compares their efficiency and execution performance.
 
 ---
 
@@ -102,7 +119,7 @@ The optimized graph significantly reduces unnecessary intermediate transactions 
 
 ## Step 1: Transaction Input
 
-Transactions between multiple participants are provided as input.
+Transactions between participants are provided as input.
 
 ---
 
@@ -116,18 +133,40 @@ For each participant:
 
 ## Step 3: Cashflow Minimization
 
-The algorithms directly settle balances between debtors and creditors while minimizing transaction count and total flow complexity.
+The algorithms directly settle balances between debtors and creditors while minimizing transaction count and transaction complexity.
 
 ---
 
-## Step 4: Visualization & Benchmarking
+## Step 4: Benchmarking & Visualization
 
-The project visualizes:
-- original transaction graph
-- optimized transaction graph
-- algorithm performance metrics
+The platform:
+- benchmarks multiple optimization algorithms
+- visualizes transaction graphs
+- compares execution performance
 
-Benchmarking is performed using Web Workers to avoid UI blocking and ensure accurate timing measurements.
+Web Workers are used for non-blocking benchmarking and smoother UI responsiveness.
+
+---
+
+# Running the Project
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+## Start Development Server
+
+```bash
+npm run dev
+```
+
+The application will run locally on:
+
+```bash
+http://localhost:5173/
+```
 
 ---
 
@@ -144,11 +183,11 @@ The concepts used in this project are relevant to:
 
 # Future Improvements
 
+- Live deployment support
 - Dynamic graph editing
 - Real-time collaborative settlements
-- Larger dataset optimization
 - Advanced graph analytics
-- Backend integration and database support
+- Backend and database integration
 
 ---
 
