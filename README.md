@@ -1,49 +1,131 @@
-# **DSA Project**
+# Cashflow Minimizer & Transaction Visualizer
 
-This repository contains implementations of fundamental Data Structures and Algorithms created as part of an institute-assigned coursework project.  
-The objective of this project is to demonstrate understanding of core DSA concepts, coding practices, and algorithmic problem-solving.
+A graph-based transaction optimization system developed as part of a Data Structures & Algorithms project.
 
----
-
-## Overview
-
-The project includes clean and well-commented implementations of commonly studied topics in DSA.  
-Each program focuses on clarity, correctness, and standard algorithmic approaches.
+The project minimizes the number of transactions required to settle debts between multiple participants while also providing a visualization of money flow before and after optimization.
 
 ---
 
-## Topics Covered
+## Problem Statement
 
-- Arrays and String operations  
-- Linked Lists (SLL, DLL)  
-- Stacks and Queues  
-- Trees (Binary Trees, BST operations)  
-- Graph Algorithms (BFS, DFS, basic traversals)  
-- Sorting & Searching techniques  
-- Basic Dynamic Programming problems  
-- Miscellaneous algorithmic utilities
+In group expense systems, direct transactions between individuals can create unnecessarily complex payment chains.
 
----
+Example:
 
-## How to Use
+Before Optimization:
+- A pays B ₹500
+- B pays C ₹500
 
-1. Navigate to the folder of the topic you want to explore.  
-2. Open the required source file in your preferred IDE or compiler.  
-3. Compile and run the program normally (C++, Java, Python depending on the file).  
-4. You may modify input values for additional testing.
+Instead of performing 2 separate transactions, the same settlement can be simplified to:
+
+After Optimization:
+- A pays C ₹500
+
+This project focuses on minimizing such redundant transactions efficiently.
 
 ---
 
-## Purpose of the Project
+## Features
 
-This project serves as a practical demonstration of the data structures and algorithms taught during the course.  
-It is intended for academic evaluation, understanding algorithm behavior, and hands-on practice.
+- Cashflow minimization
+- Debt settlement optimization
+- Graph-based transaction modelling
+- Visualization of transactions
+- Efficient handling of multiple participants
+- Modular implementation of algorithms
 
 ---
 
-## Members
+## Tech Stack
 
-Darsh Choudhary (B24CM1019)  
-Devang Shukla (B24CM1021)  
-Gurtej (B24CM1026)  
-Vinamra Gupta (B24CM1068)  
+- C++
+- STL
+- Graph Algorithms
+- Greedy Algorithms
+- Data Structures
+
+---
+
+## Approach
+
+The system works in the following steps:
+
+1. Calculate the net balance of every participant.
+   - Positive balance → amount to receive
+   - Negative balance → amount to pay
+
+2. Identify creditors and debtors.
+
+3. Apply transaction minimization logic to reduce unnecessary intermediate payments.
+
+4. Generate optimized transactions between entities.
+
+5. Visualize the transaction flow before and after optimization.
+
+---
+
+## Example
+
+### Initial Transactions
+
+| Sender | Receiver | Amount |
+|--------|----------|--------|
+| A | B | 500 |
+| B | C | 500 |
+
+### Optimized Transactions
+
+| Sender | Receiver | Amount |
+|--------|----------|--------|
+| A | C | 500 |
+
+Number of transactions reduced from 2 to 1.
+
+---
+
+## Project Structure
+
+```bash
+DSA-Project/
+│
+├── src/                 # Core source files
+├── visualization/       # Transaction visualization logic
+├── algorithms/          # Optimization algorithms
+├── utils/               # Helper functions
+└── README.md
+```
+
+---
+
+## Concepts Used
+
+- Graph Representation
+- Greedy Optimization
+- Net Balance Computation
+- Transaction Simplification
+- Data Structures using STL
+
+---
+
+## Future Improvements
+
+- GUI-based visualization
+- Real-time transaction updates
+- Web deployment
+- Advanced optimization techniques
+- Splitwise-like interface
+
+---
+
+## Contributors
+
+- Devang
+- Vinamra
+- Darsh
+- Gurtej
+
+---
+
+## Status
+
+Project completed as part of an academic DSA project and currently being improved for better visualization and modularity.
