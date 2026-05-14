@@ -1,131 +1,174 @@
-# Cashflow Minimizer & Transaction Visualizer
+# CashFlow Minimizer and Transaction Visualizer
 
-A graph-based transaction optimization system developed as part of a Data Structures & Algorithms project.
+A Data Structures & Algorithms project focused on minimizing redundant cash transactions between multiple participants using graph-based optimization techniques and transaction visualization.
 
-The project minimizes the number of transactions required to settle debts between multiple participants while also providing a visualization of money flow before and after optimization.
+The system analyzes transactions, computes net balances for each participant, and generates an optimized settlement flow that reduces unnecessary intermediate payments.
 
 ---
 
-## Problem Statement
+# Objective
 
-In group expense systems, direct transactions between individuals can create unnecessarily complex payment chains.
+In group expense systems, direct transactions between individuals often create unnecessarily complex payment chains.
 
 Example:
 
-Before Optimization:
+Initial Transactions:
 - A pays B ₹500
 - B pays C ₹500
 
-Instead of performing 2 separate transactions, the same settlement can be simplified to:
-
-After Optimization:
+Optimized Settlement:
 - A pays C ₹500
 
-This project focuses on minimizing such redundant transactions efficiently.
+The project minimizes such redundant transactions while preserving the final balance of every participant.
 
 ---
 
-## Features
+# Key Features
 
 - Cashflow minimization
+- Transaction simplification
+- Graph-based payment modelling
 - Debt settlement optimization
-- Graph-based transaction modelling
-- Visualization of transactions
-- Efficient handling of multiple participants
-- Modular implementation of algorithms
+- Visualization of money flow
+- Multi-user transaction handling
+- Efficient balance computation
 
 ---
 
-## Tech Stack
+# Concepts Used
 
-- C++
-- STL
-- Graph Algorithms
+This project applies several DSA concepts including:
+
+- Graph Representation
 - Greedy Algorithms
-- Data Structures
+- Net Balance Computation
+- Transaction Optimization
+- STL Data Structures
 
 ---
 
-## Approach
+# Working Principle
 
-The system works in the following steps:
+## Step 1: Transaction Input
 
-1. Calculate the net balance of every participant.
-   - Positive balance → amount to receive
-   - Negative balance → amount to pay
+The system takes transactions between participants as input.
 
-2. Identify creditors and debtors.
-
-3. Apply transaction minimization logic to reduce unnecessary intermediate payments.
-
-4. Generate optimized transactions between entities.
-
-5. Visualize the transaction flow before and after optimization.
-
----
-
-## Example
-
-### Initial Transactions
+Example:
 
 | Sender | Receiver | Amount |
 |--------|----------|--------|
 | A | B | 500 |
 | B | C | 500 |
 
-### Optimized Transactions
+---
+
+## Step 2: Net Balance Calculation
+
+For every participant:
+
+- Positive value → amount to receive
+- Negative value → amount to pay
+
+Example:
+
+| Person | Net Balance |
+|--------|-------------|
+| A | -500 |
+| B | 0 |
+| C | +500 |
+
+---
+
+## Step 3: Cashflow Minimization
+
+Instead of routing payments through intermediate participants, the algorithm directly settles balances between creditors and debtors.
+
+Optimized Result:
 
 | Sender | Receiver | Amount |
 |--------|----------|--------|
 | A | C | 500 |
 
-Number of transactions reduced from 2 to 1.
+This reduces:
+- Number of transactions
+- Settlement complexity
+- Redundant money flow
 
 ---
 
-## Project Structure
+# Visualization
+
+The project also includes transaction visualization to compare:
+
+- Original transaction flow
+- Optimized settlement flow
+
+This helps users better understand how transactions are reduced after optimization.
+
+---
+
+# Tech Stack
+
+## Frontend
+- HTML
+- CSS
+- JavaScript
+
+## Backend / Logic
+- C++
+- STL
+
+## Concepts & Algorithms
+- Graph Algorithms
+- Greedy Optimization
+- Net Balance Computation
+- Transaction Minimization
+
+---
+
+# Project Structure
 
 ```bash
-DSA-Project/
-│
-├── src/                 # Core source files
-├── visualization/       # Transaction visualization logic
-├── algorithms/          # Optimization algorithms
-├── utils/               # Helper functions
+.
+├── frontend/                 # UI and visualization
+├── backend/                  # Core transaction processing
+├── algorithms/               # Cashflow minimization logic
+├── assets/                   # Static assets and resources
 └── README.md
 ```
 
 ---
 
-## Concepts Used
+# Applications
 
-- Graph Representation
-- Greedy Optimization
-- Net Balance Computation
-- Transaction Simplification
-- Data Structures using STL
+The concepts used in this project are similar to systems used in:
 
----
-
-## Future Improvements
-
-- GUI-based visualization
-- Real-time transaction updates
-- Web deployment
-- Advanced optimization techniques
-- Splitwise-like interface
+- Expense splitting applications
+- Group payment systems
+- Financial settlement systems
+- Transaction optimization engines
 
 ---
 
-## Contributors
+# Future Improvements
+
+- Interactive graph visualization
+- Better UI/UX design
+- Real-time transaction editing
+- Improved scalability for larger datasets
+- Additional optimization strategies
+
+---
+
+# Contributors
 
 - Devang
 - Vinamra
-- Darsh
 - Gurtej
+- Darsh
 
 ---
 
-## Status
+# Status
 
-Project completed as part of an academic DSA project and currently being improved for better visualization and modularity.
+Completed as part of a DSA course project and currently being improved for cleaner visualization and better modularity.
