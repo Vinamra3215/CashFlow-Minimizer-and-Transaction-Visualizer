@@ -1,109 +1,59 @@
 # CashFlow Minimizer and Transaction Visualizer
 
-A Data Structures & Algorithms project focused on minimizing redundant cash transactions between multiple participants using graph-based optimization techniques and transaction visualization.
+A web-based transaction optimization and visualization system built using graph-based algorithms to minimize redundant cash transactions between multiple participants.
 
-The system analyzes transactions, computes net balances for each participant, and generates an optimized settlement flow that reduces unnecessary intermediate payments.
+The project compares multiple cashflow minimization strategies, visualizes transaction graphs, and benchmarks algorithmic performance using isolated worker-thread execution.
 
 ---
 
-# Objective
+# Overview
 
-In group expense systems, direct transactions between individuals often create unnecessarily complex payment chains.
+In group payment systems, transactions between participants often become unnecessarily complex.
 
 Example:
 
-Initial Transactions:
-- A pays B ₹500
-- B pays C ₹500
+Instead of:
 
-Optimized Settlement:
-- A pays C ₹500
+- A → B → C
 
-The project minimizes such redundant transactions while preserving the final balance of every participant.
+the system optimizes the flow into:
+
+- A → C
+
+thereby reducing:
+- redundant transactions
+- settlement complexity
+- unnecessary intermediate transfers
 
 ---
 
-# Key Features
+# Features
 
 - Cashflow minimization
-- Transaction simplification
-- Graph-based payment modelling
-- Debt settlement optimization
-- Visualization of money flow
-- Multi-user transaction handling
-- Efficient balance computation
+- Interactive transaction visualization
+- Multiple algorithm comparison
+- Real-time performance benchmarking
+- Graph-based settlement optimization
+- Web Worker powered execution
+- Optimized transaction flow generation
 
 ---
 
-# Concepts Used
+# Algorithms Implemented
 
-This project applies several DSA concepts including:
+The project compares different minimization approaches including:
 
-- Graph Representation
-- Greedy Algorithms
-- Net Balance Computation
-- Transaction Optimization
-- STL Data Structures
+- Greedy Algorithm
+- Min Cash Flow Algorithm
+- Priority Queue Based Approach
+- Heap-Based Optimization
+- Sorting-Based Optimization
 
----
-
-# Working Principle
-
-## Step 1: Transaction Input
-
-The system takes transactions between participants as input.
-
-Example:
-
-| Sender | Receiver | Amount |
-|--------|----------|--------|
-| A | B | 500 |
-| B | C | 500 |
-
----
-
-## Step 2: Net Balance Calculation
-
-For every participant:
-
-- Positive value → amount to receive
-- Negative value → amount to pay
-
-Example:
-
-| Person | Net Balance |
-|--------|-------------|
-| A | -500 |
-| B | 0 |
-| C | +500 |
-
----
-
-## Step 3: Cashflow Minimization
-
-Instead of routing payments through intermediate participants, the algorithm directly settles balances between creditors and debtors.
-
-Optimized Result:
-
-| Sender | Receiver | Amount |
-|--------|----------|--------|
-| A | C | 500 |
-
-This reduces:
-- Number of transactions
-- Settlement complexity
-- Redundant money flow
-
----
-
-# Visualization
-
-The project also includes transaction visualization to compare:
-
-- Original transaction flow
-- Optimized settlement flow
-
-This helps users better understand how transactions are reduced after optimization.
+Each algorithm is benchmarked based on:
+- transaction reduction
+- execution time
+- efficiency
+- cash flow optimization
 
 ---
 
@@ -114,49 +64,91 @@ This helps users better understand how transactions are reduced after optimizati
 - CSS
 - JavaScript
 
-## Backend / Logic
-- C++
-- STL
-
-## Concepts & Algorithms
+## Concepts Used
 - Graph Algorithms
 - Greedy Optimization
+- Heap/Priority Queue Concepts
 - Net Balance Computation
 - Transaction Minimization
+- Web Workers
 
 ---
 
-# Project Structure
+# Algorithm Comparison
 
-```bash
-.
-├── frontend/                 # UI and visualization
-├── backend/                  # Core transaction processing
-├── algorithms/               # Cashflow minimization logic
-├── assets/                   # Static assets and resources
-└── README.md
-```
+The platform benchmarks different optimization techniques and compares their efficiency.
+
+## Comparison Dashboard
+
+![Algorithm Comparison](assets/algorithm-comparison.png)
+
+---
+
+# Transaction Visualization
+
+## Original Transaction Flow
+
+![Original Transaction Flow](assets/original-graph.png)
+
+## Optimized Transaction Flow
+
+![Optimized Transaction Flow](assets/optimized-graph.png)
+
+The optimized graph significantly reduces unnecessary intermediate transactions while preserving final balances.
+
+---
+
+# Working Principle
+
+## Step 1: Transaction Input
+
+Transactions between multiple participants are provided as input.
+
+---
+
+## Step 2: Net Balance Calculation
+
+For each participant:
+- Positive balance → amount to receive
+- Negative balance → amount to pay
+
+---
+
+## Step 3: Cashflow Minimization
+
+The algorithms directly settle balances between debtors and creditors while minimizing transaction count and total flow complexity.
+
+---
+
+## Step 4: Visualization & Benchmarking
+
+The project visualizes:
+- original transaction graph
+- optimized transaction graph
+- algorithm performance metrics
+
+Benchmarking is performed using Web Workers to avoid UI blocking and ensure accurate timing measurements.
 
 ---
 
 # Applications
 
-The concepts used in this project are similar to systems used in:
+The concepts used in this project are relevant to:
 
 - Expense splitting applications
-- Group payment systems
 - Financial settlement systems
-- Transaction optimization engines
+- Payment optimization engines
+- Group transaction platforms
 
 ---
 
 # Future Improvements
 
-- Interactive graph visualization
-- Better UI/UX design
-- Real-time transaction editing
-- Improved scalability for larger datasets
-- Additional optimization strategies
+- Dynamic graph editing
+- Real-time collaborative settlements
+- Larger dataset optimization
+- Advanced graph analytics
+- Backend integration and database support
 
 ---
 
@@ -171,4 +163,4 @@ The concepts used in this project are similar to systems used in:
 
 # Status
 
-Completed as part of a DSA course project and currently being improved for cleaner visualization and better modularity.
+Completed as part of a Data Structures & Algorithms course project and currently being improved for scalability, visualization, and modularity.
