@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# Emscripten SDK
+emsdk/
+
+# WASM build artifacts
+public/algorithms.js
+public/algorithms.wasm
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
