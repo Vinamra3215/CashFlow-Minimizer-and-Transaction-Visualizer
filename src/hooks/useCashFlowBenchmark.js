@@ -20,7 +20,11 @@ export const useCashFlowBenchmark = () => {
         return;
       }
 
-      workerRef.current.onmessage = (event) => resolve(event.data);
+      workerRef.current.onmessage = (event) => {
+        // Skip the WASM initialization 'ready' message
+        if (event.data.type === 'ready') return;
+        resolve(event.data);
+      };
       workerRef.current.onerror = (error) => reject(error);
       workerRef.current.postMessage({ algorithm, netAmount });
     });
