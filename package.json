@@ -4,9 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build:wasm": "bash build_wasm.sh",
     "dev": "vite",
-    "build": "npm run build:wasm && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
