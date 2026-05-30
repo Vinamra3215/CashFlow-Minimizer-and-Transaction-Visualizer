@@ -311,7 +311,7 @@ const CashFlowMinimizer = () => {
   // Initialize Web Worker with C++/WASM backend
   // All DSA algorithms run as compiled C++ (WebAssembly) in the worker thread
   useEffect(() => {
-    const worker = new Worker('/algorithmWorker.js');
+    const worker = new Worker(new URL('./workers/cashFlowWorker.js', import.meta.url), { type: 'module' });
     workerRef.current = worker;
 
     return () => {
@@ -523,7 +523,7 @@ const CashFlowMinimizer = () => {
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Users className="text-yellow-400" size={48} />
-            <h1 className="text-5xl font-bold text-white">Cash Flow Minimizer</h1>
+            <h1 className="text-5xl font-bold text-white">CashFlow Minimizer & Transaction Visualizer</h1>
           </div>
           <p className="text-blue-200 text-lg">Multi-Algorithm Graph Visualization with Web Worker-Powered Timing</p>
         </div>
